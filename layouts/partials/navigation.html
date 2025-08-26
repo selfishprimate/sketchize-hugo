@@ -1,0 +1,15 @@
+<nav class="navigation {{ if .IsHome }}home{{ else }}{{ .Section }}{{ end }}">
+
+  <h2 class="navigation__title">
+    Site Navigation
+  </h2>
+
+  <ul class="navigation__list">
+    {{ range .Site.Sections }}
+      <li class="navigation__list__item {{ .Section }}">
+        <a class="navigation__list__item__link" href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+    {{ end }}
+  </ul>
+
+</nav>

@@ -1,0 +1,27 @@
+{
+  "name": "selfishprimate",
+  "title": "Selfish Primate",
+  "version": "1.0.0",
+  "description": "The best design resources for everyone!",
+  "homepage": "https://github.com/selfishprimate/curated-design-resources#readme",
+  "author": "Halil İbrahim Çakıroğlu",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/selfishprimate/selfishprimate.git"
+  },
+  "bugs": {
+    "url": "https://github.com/selfishprimate/selfishprimate/issues"
+  },
+  "dependencies": {
+    "gerillass": "^1.3.2",
+    "sass": "^1.88.0"
+  },
+  "devDependencies": {
+    "sass-embedded": "^1.91.0"
+  }
+}

@@ -1,0 +1,64 @@
+@include antialias;
+@include reset-css;
+@include border-box;
+@include loadify();
+
+$map-for-breakpoints: (
+  "xsmall": 0,
+  "small": 576px,
+  "medium": 768px,
+  "large": 992px,
+  "xlarge": 1200px,
+  "xxlarge": 1400px
+);
+
+// @include breakpointer {
+//   position: fixed;
+//   right: 1rem;
+//   top: 1rem;
+// }
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  text-rendering: optimizeLegibility;
+  background-color: $body-bg-color;
+  margin: 0;
+  padding: 0;
+  overscroll-behavior: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.featured-ornament {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  transform: translateX(30%) translateY(40%);
+  @include remove(max, 1700px);
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  background-color: $content-bg-color;
+  @include adaptive();
+  @include breakpoint(min, large) {
+    float: left;
+  }
+}
+
+.articles {
+  .cards {
+    @include breakpoint(max, small) {
+      margin-left: -2rem;
+      margin-right: -2rem;
+    }
+  }
+}

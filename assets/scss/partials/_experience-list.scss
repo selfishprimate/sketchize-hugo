@@ -1,0 +1,71 @@
+.experience-list {
+  list-style: none !important;
+  @include breakpoint(min, large) {
+    padding-right: 6rem;
+  }
+  &__item {
+    position: relative;
+    background-color: $white;
+    padding: 3rem 0;
+    @include except(last) {
+      border-bottom: 1px solid $border-color;
+    }
+    @include breakpoint(min, small) {
+      display: flex;
+    }
+    &__figure {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      flex: 0 0 80px;
+      margin-right: 2rem;
+      overflow: hidden;
+      img {
+        transition: $transition;
+        @include responsive-image;
+      }
+    }
+    &__title {
+      font-family: $title-font;
+      font-weight: 700;
+      font-size: __remify(22px);
+      line-height: 1.2;
+      margin-bottom: 0;
+    }
+    &__label {
+      font-size: __remify(16px);
+      margin-bottom: 1rem;
+      margin-top: 0.2rem;
+      color: $dark-gray;
+    }
+    &__description {
+      font-size: __remify(17px);
+      line-height: 1.4;
+      margin-bottom: 1rem;
+    }
+    &__link {
+      font-size: __remify(16px);
+      text-decoration: none;
+      color: $dark-gray;
+    }
+    &__skills {
+      font-size: __remify(16px);
+      margin-bottom: 1rem;
+      &__item {
+        @include except(last) {
+          @include after(", ");
+        }
+      }
+    }
+    @for $i from 1 through 20 {
+      @include only($i) {
+        @include loadify($i * 0.1s);
+      }
+    }
+    &:hover {
+      .card__label {
+        opacity: 1;
+      }
+    }
+  }
+}

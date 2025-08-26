@@ -1,0 +1,89 @@
+.cards-wrapper {
+}
+
+.cards {
+  @include columnizer(1, 2rem);
+  list-style: none !important;
+  .card {
+    position: relative;
+    background-color: $white;
+    &__figure {
+      margin-bottom: __remify(24px);
+      overflow: hidden;
+      img {
+        transition: $transition;
+        @include responsive-image;
+        margin-bottom: 0;
+      }
+    }
+    &__header {}
+    &__body {
+      & > *:not(:last-child){
+        margin-bottom: 0.5rem;
+      }
+    }
+    &__title {
+      font-family: $title-font;
+      font-size: __remify(22px);
+      line-height: 1.2;
+      margin-bottom: __remify(8px);
+    }
+    &__label {
+      font-weight: 400;
+      color: $dark-gray;
+    }
+    &__description {
+      font-weight: 300;
+      line-height: 1.4;
+    }
+    &__link {
+      @include stretched-link;
+      text-decoration: none;
+      color: inherit;
+    }
+    @for $i from 1 through 20 {
+      @include only($i) {
+        @include loadify($i * 0.1s);
+      }
+    }
+    &--bordered {
+      // border: 1px solid $border-color;
+      // border-radius: $border-radius;
+      background-color: rgb(250,250,251);
+      padding: 3rem;
+    }
+    &:hover {
+      &.card--bordered {}
+    }
+  }
+  &.min-large-2 {
+    @include breakpoint(min, large) {
+      @include columnizer(2, 3rem);
+    }
+  }
+  &.min-large-3 {
+    @include breakpoint(min, large) {
+      @include columnizer(3, 3rem);
+    }
+  }
+  &.min-xlarge-2 {
+    @include breakpoint(min, xlarge) {
+      @include columnizer(2, 3rem);
+    }
+  }
+  &.min-xlarge-3 {
+    @include breakpoint(min, xlarge) {
+      @include columnizer(3, 3rem);
+    }
+  }
+  &.min-xxlarge-4 {
+    @include breakpoint(min, xxlarge) {
+      @include columnizer(4, 3rem);
+    }
+  }
+  &--projects {
+    .card {
+      margin-bottom: 4rem;
+    }
+  }
+}

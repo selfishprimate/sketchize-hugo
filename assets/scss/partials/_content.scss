@@ -1,0 +1,121 @@
+.content {
+  padding: 2rem 2rem 2rem;
+  transition: $transition;
+  @include breakpoint(min, small) {
+    padding: 3rem 3rem 3rem;
+  }
+  @include breakpoint(min, large) {
+    margin-left: $sidebar-width;
+  }
+  &__header {
+    position: relative;
+    margin-bottom: 2rem;
+    // @include after("data-decorative-text") {
+    //   position: absolute;
+    //   width: 100vw;
+    //   height: 200px;
+    //   top: -125px;
+    //   left: -100px;
+    //   font-size: 12rem;
+    //   font-weight: 900;
+    //   line-height: 1;
+    //   z-index: 0;
+    //   white-space: nowrap;
+    //   @include text-stroke(
+    //     $stroke-color: rgb(230,230,230),
+    //     $fallback-color: rgb(245,245,245),
+    //     $stroke-width: 1px
+    //   );
+    // }
+  }
+  &__body {
+    position: relative;
+    margin-bottom: 5rem;
+    figure {
+      @include breakpoint (max, small) {
+        @include except(".experience-list__item__figure"){
+          margin-left: -2rem;
+          margin-right: -2rem;
+        }
+      }
+      margin-bottom: 2rem;
+      img {
+        margin-bottom: 1rem;
+      }
+      figcaption {
+        p {
+          font-size: 1rem;
+          text-align: center;
+          color: $dark-gray;
+          margin: 0;
+          padding: 0 3rem;
+          line-height: 130%;
+        }
+      }
+      &.large {
+        @include breakpoint(min, large) {
+          width: calc(100vw - (#{$sidebar-width} - -6rem));
+          figcaption {
+            display: none;
+          }
+        }
+      }
+    }
+    p {
+      margin-bottom: 2rem;
+    }
+    & > p {
+      font-size: 1.2rem;
+      &:first-of-type {
+        &::first-letter {}
+      }
+    }
+    & > h3 {
+      margin-top: 3rem;
+    }
+    a {
+      font-weight: 600;
+      color: $primary-color;
+    }
+    &.single {
+      ol, ul {
+        li {
+          list-style-position: inside;
+          position: relative;
+          padding-left: 2rem;
+          @include except(last) {
+            margin-bottom: 0.5rem;
+          }
+          &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: list-item;
+            list-style-type: circle;
+          }
+        }
+      }
+    }    
+  }
+  &__footer {
+    padding-top: 2rem;
+    // border-top: 1px solid $border-color;
+  }
+  &__title {
+    position: relative;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    z-index: 1;
+  }
+  &__description {
+    position: relative;
+    font-size: 1.6rem;
+    font-weight: 200;
+    line-height: 1.3;
+    color: rgb(127,129,132);
+  }
+  img {
+    @include responsive-image;
+  }
+}

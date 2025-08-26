@@ -1,0 +1,19 @@
+baseURL = "https://selfishprimate.com/"
+title = "Selfish Primate"
+
+# This command below is cleaning the unused content of ./public folder.
+cleanDestinationDir = true
+
+[sitemap]
+    changefreq = 'monthly'
+    filename = 'sitemap.xml'
+    priority = 0.5
+
+[build]
+  [build.buildStats]
+    enable = true
+
+[params]
+    Description = "Gerillass is an open-source Sass library built on top of Sass to help designers and developers rapidly-produce consistent and scalable CSS outputs regardless of the size of the projects they are working on, aiming to make these processes easy and fun."
+
+    Keywords = "Gerillass, CSS, CSS3, Web Design, Sass Mixins, Sass Functions, SCSS, Sass, Sass Toolkit, Sass Library, Sass Libraries, Sass Framework, Learn Sass, What is Sass, Frontend Tools"

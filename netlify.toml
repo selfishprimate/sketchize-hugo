@@ -1,0 +1,29 @@
+[build]
+  # Use the local binaries (sass-embedded) and build with Hugo
+  command = "export PATH=$PATH:./node_modules/.bin && hugo --gc --minify --ignoreCache"
+  publish = "public"
+
+[build.environment]
+  # Pin Hugo Extended (matches the version Netlify pulled in your logs)
+  HUGO_VERSION = "0.147.2"
+  HUGO_ENV = "production"
+  HUGO_ENABLEGITINFO = "true"
+
+  # Ensure Node 20; Netlify will use npm when only package-lock.json exists
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"
+
+[functions]
+  node_bundler = "esbuild"
+
+# (Optional) Match your previous cache headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    cache-control = "max-age=0, no-cache, no-store, must-revalidate"
+
+# (Optional) Keep Netlify’s image compression on
+[build.processing]
+  skip_processing = false
+  [build.processing.images]
+    compress = true

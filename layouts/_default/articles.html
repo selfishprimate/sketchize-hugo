@@ -1,0 +1,36 @@
+{{ partial "master-top.html" . }}
+
+  <div class="content">
+
+    {{ partial "mobile-header.html" . }}
+    
+    {{ partial "hero.html" . }}
+
+    <div class="content__header" data-decorative-text="{{ .Params.Title }}">
+      <h2 class="content__title">{{ .Params.Title }}</h2>
+      <p class="content__description">{{ .Params.Description }}</p>
+    </div>
+
+    <div class="content__body">
+      {{ .Content }}
+      {{$data := string .Params.data }}
+      <div class="cards-wrapper">
+        <ul class="cards min-xlarge-2">
+          {{ range (index .Site.Data $data) }}
+            <li class="card card--bordered">
+              <a class="card__link" href="{{ .link }}" target="_blank">
+                <div class="card__body">
+                  <h3 class="card__title">{{ .title }}</h3>
+                  <div class="card__description">{{ .description }}</div>
+                  {{ if .label }}<div class="card__label">{{ .label }}</div>{{ end }}
+                </div>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div><!-- .content-body -->
+
+  </div><!-- .content -->
+  
+{{ partial "master-bottom.html" . }}

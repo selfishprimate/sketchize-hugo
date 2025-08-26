@@ -1,0 +1,62 @@
+.navigation {
+  margin-bottom: 2rem;
+  &__title {
+    @include hide;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  &__list {
+    &__item {
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 6px 0;
+      font-size: 1rem;
+      ion-icon {
+        position: absolute;
+        left: 0;
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+%active-link {
+  font-weight: bold;
+}
+
+body {
+  &.ui-ux-design {
+    .navigation__list__item.ui-ux-design {
+      @extend %active-link;
+    }
+  }
+
+  &.illustration {
+    .navigation__list__item.illustration {
+      @extend %active-link;
+    }
+  }
+
+  &.articles {
+    .navigation__list__item.articles {
+      @extend %active-link;
+    }
+  }
+
+  &.experience {
+    .navigation__list__item.experience {
+      @extend %active-link;
+    }
+  }
+
+
+  &.about-me {
+    .navigation__list__item.about-me {
+      @extend %active-link;
+    }
+  }
+
+}
