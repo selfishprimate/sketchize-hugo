@@ -7,6 +7,7 @@ page_ornament: false
 # featured_image: "projects.jpg"
 weight: 2
 layout: single
+draft: true
 ---
 
 {{< figure 

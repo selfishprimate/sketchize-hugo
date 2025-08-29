@@ -5,6 +5,7 @@ quote: '"Design is thinking made visual." - Saul Bass'
 keywords: "Halil İbrahim Çakıroğlu, UX Designer in Istanbul, User Interface Design, User Experience Design, Istanbul based UX Designer, Freelance UX Designer, UX Designer, UI/UX Design"
 weight: 5
 layout: single
+draft: true
 # hero_image: "accessibility.jpg"
 # hero_alt: "Acessibility design resources"
 # featured_image: "accessibility.jpg"
